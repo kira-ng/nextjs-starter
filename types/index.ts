@@ -8,6 +8,11 @@ declare module 'next' {
   }
   type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
     layout?: ({ children }: PropsWithChildren) => ReactElement
+    auth?: {
+      protected: boolean
+      roles?: string[]
+      redirect?: string
+    }
   }
 }
 

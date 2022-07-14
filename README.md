@@ -42,4 +42,6 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
 npm install @headlessui/react @heroicons/react
+
+npm i @fortawesome/fontawesome-free @popperjs/core
 ```

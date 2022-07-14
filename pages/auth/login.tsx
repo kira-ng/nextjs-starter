@@ -1,10 +1,26 @@
 import type { NextPageWithLayout } from 'next'
 import Link from 'next/link'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { signIn } from 'next-auth/react'
 
 // layout for page
 import Auth from '../../layouts/Auth'
 
 const Login: NextPageWithLayout = () => {
+  const router = useRouter()
+  const callbackUrl: any = router.query.callbackUrl || '/'
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [errMsg, setErrMsg] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const res = await signIn('credentials', { redirect: false, username: email, password })
+    if (res?.ok) router.push(callbackUrl)
+  }
+
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -37,7 +53,7 @@ const Login: NextPageWithLayout = () => {
                 <div className="text-slate-400 text-center mb-3 font-bold">
                   <small>Or sign in with credentials</small>
                 </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-slate-600 text-xs font-bold mb-2"
@@ -49,6 +65,7 @@ const Login: NextPageWithLayout = () => {
                       type="email"
                       className="border-0 px-3 py-3 placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Email"
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
 
@@ -63,6 +80,7 @@ const Login: NextPageWithLayout = () => {
                       type="password"
                       className="border-0 px-3 py-3 placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Password"
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                   <div>
@@ -79,7 +97,7 @@ const Login: NextPageWithLayout = () => {
                   <div className="text-center mt-6">
                     <button
                       className="bg-slate-800 text-white active:bg-slate-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                      type="button"
+                      type="submit"
                     >
                       Sign In
                     </button>
