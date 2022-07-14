@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap text-center lg:text-left">
             <div className="w-full lg:w-6/12 px-4">
-              <h4 className="text-3xl font-semibold">Let`&apos;`s keep in touch!</h4>
+              <h4 className="text-3xl font-semibold">Let&apos;s keep in touch!</h4>
               <h5 className="text-lg mt-0 mb-2 text-slate-600">
                 Find us on any of these platforms, we respond 1-2 business days.
               </h5>
@@ -67,7 +67,7 @@ const Footer = () => {
                     <li>
                       <a
                         className="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/presentation?ref=nnjs-footer"
+                        href="#"
                       >
                         About Us
                       </a>
@@ -75,7 +75,7 @@ const Footer = () => {
                     <li>
                       <a
                         className="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm"
-                        href="https://blog.creative-tim.com?ref=nnjs-footer"
+                        href="#"
                       >
                         Blog
                       </a>
@@ -83,7 +83,7 @@ const Footer = () => {
                     <li>
                       <a
                         className="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm"
-                        href="https://www.github.com/creativetimofficial?ref=nnjs-footer"
+                        href="#"
                       >
                         Github
                       </a>
@@ -91,7 +91,7 @@ const Footer = () => {
                     <li>
                       <a
                         className="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/bootstrap-themes/free?ref=nnjs-footer"
+                        href="#"
                       >
                         Free Products
                       </a>
@@ -106,7 +106,7 @@ const Footer = () => {
                     <li>
                       <a
                         className="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm"
-                        href="https://github.com/creativetimofficial/notus-nextjs/blob/main/LICENSE.md?ref=nnjs-footer"
+                        href="#"
                       >
                         MIT License
                       </a>
@@ -114,7 +114,7 @@ const Footer = () => {
                     <li>
                       <a
                         className="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/terms?ref=nnjs-footer"
+                        href="#"
                       >
                         Terms & Conditions
                       </a>
@@ -122,7 +122,7 @@ const Footer = () => {
                     <li>
                       <a
                         className="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/privacy?ref=nnjs-footer"
+                        href="#"
                       >
                         Privacy Policy
                       </a>
@@ -130,7 +130,7 @@ const Footer = () => {
                     <li>
                       <a
                         className="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us?ref=nnjs-footer"
+                        href="#"
                       >
                         Contact Us
                       </a>

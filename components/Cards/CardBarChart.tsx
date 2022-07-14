@@ -1,9 +1,9 @@
 import React from 'react'
-import Chart from 'chart.js'
+import Chart from 'chart.js/auto'
 
 export default function CardBarChart() {
   React.useEffect(() => {
-    let config = {
+    let config: any = {
       type: 'bar',
       data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -48,47 +48,13 @@ export default function CardBarChart() {
           align: 'end',
           position: 'bottom',
         },
-        scales: {
-          xAxes: [
-            {
-              display: false,
-              scaleLabel: {
-                display: true,
-                labelString: 'Month',
-              },
-              gridLines: {
-                borderDash: [2],
-                borderDashOffset: [2],
-                color: 'rgba(33, 37, 41, 0.3)',
-                zeroLineColor: 'rgba(33, 37, 41, 0.3)',
-                zeroLineBorderDash: [2],
-                zeroLineBorderDashOffset: [2],
-              },
-            },
-          ],
-          yAxes: [
-            {
-              display: true,
-              scaleLabel: {
-                display: false,
-                labelString: 'Value',
-              },
-              gridLines: {
-                borderDash: [2],
-                drawBorder: false,
-                borderDashOffset: [2],
-                color: 'rgba(33, 37, 41, 0.2)',
-                zeroLineColor: 'rgba(33, 37, 41, 0.15)',
-                zeroLineBorderDash: [2],
-                zeroLineBorderDashOffset: [2],
-              },
-            },
-          ],
-        },
       },
     }
-    let ctx = document.getElementById('bar-chart').getContext('2d')
-    window.myBar = new Chart(ctx, config)
+    const barChartEl: any = document.getElementById('bar-chart')
+    if (barChartEl) {
+      let ctx = barChartEl.getContext('2d')
+      new Chart(ctx, config)
+    }
   }, [])
   return (
     <>
