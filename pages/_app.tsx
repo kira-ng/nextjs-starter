@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import type { AppPropsWithLayout } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
